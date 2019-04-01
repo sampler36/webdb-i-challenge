@@ -1,8 +1,8 @@
 # Database Queries
 
 ## find all customers that live in London. Returns 6 records.
-SELECT TOP 6 * FROM CUSTOMERS
-WHERE CITY IN ('LONDON')
+SELECT * FROM CUSTOMERS
+WHERE CITY = ('London')
 
 
 ## find all customers with postal code 1010. Returns 3 customers.
@@ -25,7 +25,7 @@ ORDER BY ORDERDATE DESC
 ## find all suppliers who have names longer than 20 characters. You can use `length(SupplierName)` to get the length of the name. Returns 11 records.
 
 SELECT * FROM SUPPLIERS
-WHERE LENGTH(SUPPLIERS) > 20
+WHERE length(SupplierName) > 20
 
 ## find all customers that include the word "market" in the name. Should return 4 records.
 SELECT * FROM CUSTOMERS
@@ -34,7 +34,7 @@ WHERE CUSTOMERNAME LIKE '%market%'
 ## add a customer record for _"The Shire"_, the contact name is _"Bilbo Baggins"_ the address is _"1 Hobbit-Hole"_ in _"Bag End"_, postal code _"111"_ and the country is _"Middle Earth"_.
 INSERT INTO CUSTOMER
 
-<!-- NOT WORKING YET :INSERT INTO customers (contactName = "Bilbo Baggins", address = "1 Hobbit-Hole in", postalcode = "111", country = "midle earth")  -->
+
 
 ## update _Bilbo Baggins_ record so that the postal code changes to _"11122"_.
 UPDATE CUSTOMERS
